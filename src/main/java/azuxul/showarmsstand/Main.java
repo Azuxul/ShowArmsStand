@@ -16,22 +16,28 @@ public class Main {
 
 	public static final String MODID = "showarmsstand";
 	public static final String NAME = "ShowArmsStand";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.1";
 	
 	public static Item ShowingArmsArmorStand;
+	public static Item SmallShowingArmsArmorStand;
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event){
 		
 		ShowingArmsArmorStand = new ShowingArmsArmorStand();
+		SmallShowingArmsArmorStand = new SmallShowingArmsArmorStand();
 		
 		GameRegistry.registerItem(ShowingArmsArmorStand, "showingarmsarmorstand");
+		GameRegistry.registerItem(SmallShowingArmsArmorStand, "smallshowingarmsarmorstand");
 		
-		GameRegistry.addShapedRecipe(new ItemStack(ShowingArmsArmorStand), "A", 'A', Items.armor_stand);
+		GameRegistry.addShapedRecipe(new ItemStack(ShowingArmsArmorStand), "BAB", 'A', Items.armor_stand, 'B', Items.stick);
+		GameRegistry.addShapedRecipe(new ItemStack(SmallShowingArmsArmorStand), "A", 'A', Items.armor_stand);
 		GameRegistry.addShapedRecipe(new ItemStack(Items.armor_stand), "A", 'A', ShowingArmsArmorStand);
+		GameRegistry.addShapedRecipe(new ItemStack(Items.armor_stand, 0, 2), "A", 'A', SmallShowingArmsArmorStand);
 		
 		if(event.getSide().isClient()){
 			
+			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(SmallShowingArmsArmorStand, 0, new ModelResourceLocation(Main.MODID+ ":smallshowingarmsarmorstand", "inventory"));
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ShowingArmsArmorStand, 0, new ModelResourceLocation(Main.MODID+ ":showingarmsarmorstand", "inventory"));
 		}
 	}
