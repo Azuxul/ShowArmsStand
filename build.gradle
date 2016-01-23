@@ -1,10 +1,34 @@
+<<<<<<< HEAD
+// For those who want the bleeding edge
+buildscript {
+    repositories {
+        jcenter()
+=======
 buildscript {
     repositories {
         mavenCentral()
+>>>>>>> b6a808c6aceb01cf587b990e8b9f4259f2482364
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
+<<<<<<< HEAD
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.2"
+group = "fr.azuxul.showarmsstand"
+archivesBaseName = "showarmsstand"
+
+minecraft {
+    version = "1.8.9-11.15.0.1715"
+    runDir = "run"
+
+=======
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -25,11 +49,37 @@ minecraft {
     version = "1.8-11.14.1.1334"
     runDir = "eclipse"
     
+>>>>>>> b6a808c6aceb01cf587b990e8b9f4259f2482364
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
+<<<<<<< HEAD
+    mappings = "stable_20"
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+
+processResources
+        {
+            // this will ensure that this task is redone when the versions change.
+            inputs.property "version", project.version
+            inputs.property "mcversion", project.minecraft.version
+
+            // replace stuff in mcmod.info, nothing else
+            from(sourceSets.main.resources.srcDirs) {
+                include 'mcmod.info'
+
+                // replace version and mcversion
+                expand 'version': project.version, 'mcversion': project.minecraft.version
+            }
+
+            // copy everything else, thats not the mcmod.info
+            from(sourceSets.main.resources.srcDirs) {
+                exclude 'mcmod.info'
+            }
+        }
+=======
     mappings = "snapshot_20141130"
 }
 
@@ -69,3 +119,4 @@ processResources
     }
 	
 }
+>>>>>>> b6a808c6aceb01cf587b990e8b9f4259f2482364
