@@ -4,9 +4,17 @@
 			"mcVersion":"Minecraft 1.8",
 			"modVersion":"1.1",
 			"changeLog": [],
-			"updateURL":"http://minecraft.curseforge.com/mc-mods/229458-showarmsstand/files/2246208/download",
+			"updateURL":"http://minecraft.curseforge.com/projects/showarmsstand/files/2246208/download",
 			"isDirectLink":"true",
 			"newFileName":"ShowArmsStand-1.8-1.1"
+		},
+		{
+			"mcVersion":"Minecraft 1.8.9",
+			"modVersion":"1.2",
+			"changeLog": [],
+			"updateURL":"http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
+			"isDirectLink":"true",
+			"newFileName":"ShowArmsStand-1.8.9-1.2"
 		}
 	]
 }
