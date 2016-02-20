@@ -10,11 +10,11 @@
 		},
 		{
 			"mcVersion":"Minecraft 1.8.9",
-			"modVersion":"1.2",
+			"modVersion": "1.2.1",
 			"changeLog": [],
-			"updateURL":"http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
+			"updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2282905/download",
 			"isDirectLink":"true",
-			"newFileName":"ShowArmsStand-1.8.9-1.2"
+			"newFileName": "ShowArmsStand-1.8.9-1.2.1"
 		}
 	]
 }
