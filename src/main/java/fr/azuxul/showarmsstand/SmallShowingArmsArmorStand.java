@@ -47,7 +47,7 @@ public class SmallShowingArmsArmorStand extends Item {
                     double d2 = (double) blockpos1.getZ();
                     List list = worldIn.getEntitiesWithinAABBExcludingEntity(null, AxisAlignedBB.fromBounds(d0, d1, d2, d0 + 1.0D, d1 + 2.0D, d2 + 1.0D));
 
-                    if (list.isEmpty()) {
+                    if (!list.isEmpty()) {
                         return false;
                     } else {
                         if (!worldIn.isRemote) {
