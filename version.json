@@ -10,11 +10,13 @@
 		},
 		{
 			"mcVersion":"Minecraft 1.8.9",
-			"modVersion": "1.2.1",
-			"changeLog": [],
-			"updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2282905/download",
+			"modVersion": "1.2.2",
+			"changeLog": [
+				"Fix bug placing bug with small armor stands"
+			],
+			"updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
 			"isDirectLink":"true",
-			"newFileName": "ShowArmsStand-1.8.9-1.2.1"
+			"newFileName": "ShowArmsStand-1.8.9-1.2.2"
 		}
 	]
 }
