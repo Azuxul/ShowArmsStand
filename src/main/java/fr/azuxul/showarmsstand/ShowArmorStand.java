@@ -1,19 +1,19 @@
 package fr.azuxul.showarmsstand;
 
 import net.minecraft.entity.item.EntityArmorStand;
-import net.minecraft.util.Rotations;
+import net.minecraft.util.math.Rotations;
 
 import java.util.Random;
 
 /**
- * Utils
+ * ShowArmorStand
  *
  * @author Azuxul
  * @version 1.0
  */
-public class Utils {
+public class ShowArmorStand {
 
-    private Utils() {
+    private ShowArmorStand() {
 
     }
 
