@@ -16,14 +16,14 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * Main class of ShowArmsStand mod
+ * ShowArmsStand class of ShowArmsStand mod
  *
  * @author Azuxul
  */
 
-@Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME)
+@Mod(modid = ShowArmsStand.MODID, version = ShowArmsStand.VERSION, name = ShowArmsStand.NAME)
 
-public class Main {
+public class ShowArmsStand {
 
     public static final String MODID = "showarmsstand";
     public static final String NAME = "ShowArmsStand";
@@ -35,11 +35,11 @@ public class Main {
     @EventHandler
     public static void init(FMLInitializationEvent event) {
 
-        GameRegistry.register(itemShowingArmsArmorStand, new ResourceLocation(Main.MODID + ":showingarmsarmorstand"));
-        GameRegistry.register(itemSmallShowingArmsArmorStand, new ResourceLocation(Main.MODID + ":smallshowingarmsarmorstand"));
-        GameRegistry.register(itemSwitchHandWand, new ResourceLocation(Main.MODID + ":switchhandwand"));
+        GameRegistry.register(itemShowingArmsArmorStand, new ResourceLocation(ShowArmsStand.MODID + ":showingarmsarmorstand"));
+        GameRegistry.register(itemSmallShowingArmsArmorStand, new ResourceLocation(ShowArmsStand.MODID + ":smallshowingarmsarmorstand"));
+        GameRegistry.register(itemSwitchHandWand, new ResourceLocation(ShowArmsStand.MODID + ":switchhandwand"));
 
-        GameRegistry.addShapedRecipe(new ItemStack(itemSwitchHandWand), "A A", "A ", "A  ", 'A', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(itemSwitchHandWand), "A A", " A ", "A  ", 'A', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(itemShowingArmsArmorStand), "BAB", 'A', Items.ARMOR_STAND, 'B', Items.STICK);
         GameRegistry.addShapedRecipe(new ItemStack(itemSmallShowingArmsArmorStand), "A", 'A', Items.ARMOR_STAND);
         GameRegistry.addShapedRecipe(new ItemStack(Items.ARMOR_STAND), "A", 'A', itemShowingArmsArmorStand);
@@ -47,9 +47,9 @@ public class Main {
 
         if (event.getSide().isClient()) {
 
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSmallShowingArmsArmorStand, 0, new ModelResourceLocation(Main.MODID + ":smallshowingarmsarmorstand", "inventory"));
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemShowingArmsArmorStand, 0, new ModelResourceLocation(Main.MODID + ":showingarmsarmorstand", "inventory"));
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSwitchHandWand, 0, new ModelResourceLocation(Main.MODID + ":switchhandwand", "inventory"));
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSmallShowingArmsArmorStand, 0, new ModelResourceLocation(ShowArmsStand.MODID + ":smallshowingarmsarmorstand", "inventory"));
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemShowingArmsArmorStand, 0, new ModelResourceLocation(ShowArmsStand.MODID + ":showingarmsarmorstand", "inventory"));
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemSwitchHandWand, 0, new ModelResourceLocation(ShowArmsStand.MODID + ":switchhandwand", "inventory"));
         }
 
         MinecraftForge.EVENT_BUS.register(new Events());

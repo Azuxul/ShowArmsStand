@@ -23,7 +23,7 @@ public class Events {
 
         ItemStack item = event.getItemStack();
 
-        if (item.getItem() == Main.itemSwitchHandWand) {
+        if (item.getItem() == ShowArmsStand.itemSwitchHandWand) {
 
             EntityArmorStand entityArmorStand = (EntityArmorStand) event.getTarget();
 
