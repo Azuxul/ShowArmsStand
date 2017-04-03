@@ -18,26 +18,35 @@
 			"isDirectLink":"true",
 			"newFileName": "ShowArmsStand-1.8.9-1.2.2"
         },
-      {
-        "mcVersion": "Minecraft 1.9.4",
-        "modVersion": "1.3",
-        "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
-        "isDirectLink": "true",
-        "newFileName": "ShowArmsStand-1.9.4-1.3"
-      },
-      {
-        "mcVersion": "Minecraft 1.10.2",
-        "modVersion": "1.3",
-        "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
-        "isDirectLink": "true",
-        "newFileName": "ShowArmsStand-1.10.2-1.3"
-      },
-      {
-        "mcVersion": "Minecraft 1.11.2",
-        "modVersion": "1.3",
-        "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2277023/download",
-        "isDirectLink": "true",
-        "newFileName": "ShowArmsStand-1.11.2-1.3"
-		}
+        {
+          "mcVersion": "Minecraft 1.9.4",
+          "modVersion": "1.3",
+          "changeLog": [
+            "Update to 1.9.4, Add SwitchHandWand"
+          ],
+          "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402447/download",
+          "isDirectLink": "true",
+          "newFileName": "ShowArmsStand-1.9.4-1.3"
+        },
+        {
+          "mcVersion": "Minecraft 1.10.2",
+          "modVersion": "1.3",
+          "changeLog": [
+            "Update to 1.10.2, Add SwitchHandWand"
+          ],
+          "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402448/download",
+          "isDirectLink": "true",
+          "newFileName": "ShowArmsStand-1.10.2-1.3"
+        },
+        {
+          "mcVersion": "Minecraft 1.11.2",
+          "modVersion": "1.3",
+          "changeLog": [
+            "Update to 1.11.2, Add SwitchHandWand"
+          ],
+          "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402450/download",
+          "isDirectLink": "true",
+          "newFileName": "ShowArmsStand-1.11.2-1.3"
+          }
 	]
 }
