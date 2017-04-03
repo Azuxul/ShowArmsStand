@@ -1,6 +1,6 @@
 package fr.azuxul.showarmsstand.item;
 
-import fr.azuxul.showarmsstand.ShowArmorStand;
+import fr.azuxul.showarmsstand.MathHelper;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityArmorStand;
@@ -13,7 +13,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -29,13 +28,14 @@ public class SmallShowingArmsArmorStand extends Item {
 
     @Override
     @MethodsReturnNonnullByDefault
-    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 
         if (side == EnumFacing.DOWN) {
             return EnumActionResult.FAIL;
         } else {
             boolean flag = worldIn.getBlockState(pos).getBlock().isReplaceable(worldIn, pos);
             BlockPos blockPos = flag ? pos : pos.offset(side);
+            ItemStack stack = playerIn.getHeldItem(hand);
 
             if (!playerIn.canPlayerEdit(blockPos, side, stack)) {
                 return EnumActionResult.FAIL;
@@ -60,9 +60,9 @@ public class SmallShowingArmsArmorStand extends Item {
                             worldIn.setBlockToAir(blockPos);
                             worldIn.setBlockToAir(blockPos1);
                             EntityArmorStand entityarmorstand = new EntityArmorStand(worldIn, x + 0.5D, y, z + 0.5D);
-                            float f3 = (float) MathHelper.floor((MathHelper.wrapDegrees(playerIn.rotationYaw - 180.0F) + 22.5F) / 45.0F) * 45.0F;
+                            float f3 = (float) net.minecraft.util.math.MathHelper.floor((net.minecraft.util.math.MathHelper.wrapDegrees(playerIn.rotationYaw - 180.0F) + 22.5F) / 45.0F) * 45.0F;
                             entityarmorstand.setLocationAndAngles(x + 0.5D, y, z + 0.5D, f3, 0.0F);
-                            ShowArmorStand.applyRandomRotations(entityarmorstand, worldIn.rand);
+                            MathHelper.applyRandomRotations(entityarmorstand, worldIn.rand);
                             NBTTagCompound nbttagcompound = stack.getTagCompound();
 
                             if (nbttagcompound != null && nbttagcompound.hasKey("EntityTag", 10)) {
@@ -81,7 +81,7 @@ public class SmallShowingArmsArmorStand extends Item {
 
                             worldIn.spawnEntity(entityarmorstand);
 
-                            stack.stackSize--;
+                            stack.shrink(1);
                         }
 
                         return EnumActionResult.SUCCESS;

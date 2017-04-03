@@ -6,14 +6,14 @@ import net.minecraft.util.math.Rotations;
 import java.util.Random;
 
 /**
- * ShowArmorStand
+ * MathHelper
  *
  * @author Azuxul
  * @version 1.0
  */
-public class ShowArmorStand {
+public class MathHelper {
 
-    private ShowArmorStand() {
+    private MathHelper() {
 
     }
 

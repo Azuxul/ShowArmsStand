@@ -18,7 +18,7 @@ group= "fr.azuxul.showarmsstand"
 archivesBaseName = "showarmsstand"
 
 minecraft {
-    version = "1.10.2-12.18.3.2185"
+    version = "1.11.2-13.20.0.2228"
     runDir = "run"
 
     // 1.9.4-12.17.0.1976
