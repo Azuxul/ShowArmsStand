@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2017. Azuxul, All Rights Reserved.
+ */
+
 package fr.azuxul.showarmsstand;
 
 import fr.azuxul.showarmsstand.item.ShowingArmsArmorStand;
@@ -27,7 +31,7 @@ public class ShowArmsStand {
 
     public static final String MODID = "showarmsstand";
     public static final String NAME = "ShowArmsStand";
-    public static final String VERSION = "1.3";
+    public static final String VERSION = "1.3.1";
     public static final Item itemShowingArmsArmorStand = new ShowingArmsArmorStand();
     public static final Item itemSmallShowingArmsArmorStand = new SmallShowingArmsArmorStand();
     public static final Item itemSwitchHandWand = new Item().setUnlocalizedName("switchhandwand").setCreativeTab(CreativeTabs.TOOLS);
