@@ -2,6 +2,7 @@ package fr.azuxul.showarmsstand;
 
 import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -20,13 +21,13 @@ public class Events {
     @SubscribeEvent
     public void onPlayerInteract(PlayerInteractEvent.EntityInteractSpecific event) {
 
-        ItemStack item = ((EntityPlayer) event.getEntity()).getHeldItemMainhand();
-
         if (!(event.getTarget() instanceof EntityArmorStand)) {
             return;
         }
 
         EntityArmorStand entityArmorStand = (EntityArmorStand) event.getTarget();
+        EntityPlayer entityPlayer = ((EntityPlayer) event.getEntity());
+        ItemStack item = entityPlayer.getHeldItemMainhand();
 
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
 
@@ -36,12 +37,20 @@ public class Events {
 
             if (entityArmorStand.getHeldItemMainhand() == null && entityArmorStand.getHeldItemOffhand() != null && !hasDisabledSlots(nbtTagCompound, EntityEquipmentSlot.MAINHAND, true, true, false)) {
 
-                ((EntityPlayer) event.getEntity()).setHeldItem(event.getHand(), entityArmorStand.getHeldItemOffhand());
-                entityArmorStand.setHeldItem(EnumHand.OFF_HAND, null);
+                entityPlayer.setHeldItem(event.getHand(), entityArmorStand.getHeldItemOffhand());
+                entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, null);
+
+                event.setCanceled(true);
             }
 
+            return;
+        }
 
-        } else if (ShowArmsStand.itemSwitchHandWand.equals(item.getItem()) && !hasDisabledSlots(nbtTagCompound, EntityEquipmentSlot.MAINHAND, true, true, true) && !hasDisabledSlots(nbtTagCompound, EntityEquipmentSlot.OFFHAND, true, true, true)) {
+        if (hasDisabledSlots(nbtTagCompound, EntityEquipmentSlot.MAINHAND, true, true, true) || !nbtTagCompound.getBoolean("ShowArms")) {
+            return;
+        }
+
+        if (ShowArmsStand.itemSwitchHandWand.equals(item.getItem())) {
 
             event.setCanceled(true);
 
@@ -49,15 +58,19 @@ public class Events {
                 return;
             }
 
-            if (nbtTagCompound.getBoolean("ShowArms")) {
+            ItemStack hand1 = entityArmorStand.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
+            ItemStack hand2 = entityArmorStand.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
 
-                ItemStack hand1 = entityArmorStand.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
-                ItemStack hand2 = entityArmorStand.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
+            entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, hand2);
+            entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, hand1);
 
-                entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, hand2);
-                entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, hand1);
 
-            }
+        } else if (Items.SHIELD.equals(item.getItem()) && entityArmorStand.getHeldItemMainhand() != null && entityArmorStand.getHeldItemOffhand() == null && event.getHand() == EnumHand.MAIN_HAND) {
+
+            event.setCanceled(true);
+
+            entityArmorStand.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, item);
+            entityPlayer.setHeldItem(EnumHand.MAIN_HAND, null);
         }
 
     }
