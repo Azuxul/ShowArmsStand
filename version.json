@@ -20,33 +20,33 @@
     },
     {
       "mcVersion": "Minecraft 1.9.4",
-      "modVersion": "1.3",
+      "modVersion": "1.3.1",
       "changeLog": [
-        "Update to 1.9.4, Add SwitchHandWand"
+        "Wand is fixed, offhand items can be removed and shields can be place in second hand without the wand when the main hand is full."
       ],
-      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402447/download",
+      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2403346/download",
       "isDirectLink": "true",
-      "newFileName": "ShowArmsStand-1.9.4-1.3"
+      "newFileName": "ShowArmsStand-1.9.4-1.3.1"
     },
     {
       "mcVersion": "Minecraft 1.10.2",
-      "modVersion": "1.3",
+      "modVersion": "1.3.1",
       "changeLog": [
-        "Update to 1.10.2, Add SwitchHandWand"
+        "Wand is fixed, offhand items can be removed and shields can be place in second hand without the wand when the main hand is full."
       ],
-      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402448/download",
+      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2403349/download",
       "isDirectLink": "true",
-      "newFileName": "ShowArmsStand-1.10.2-1.3"
+      "newFileName": "ShowArmsStand-1.10.2-1.3.1"
     },
     {
       "mcVersion": "Minecraft 1.11.2",
       "modVersion": "1.3",
       "changeLog": [
-        "Update to 1.11.2, Add SwitchHandWand"
+        "Wand is fixed, offhand items can be removed and shields can be place in second hand without the wand when the main hand is full."
       ],
-      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2402450/download",
+      "updateURL": "http://minecraft.curseforge.com/projects/showarmsstand/files/2403351/download",
       "isDirectLink": "true",
-      "newFileName": "ShowArmsStand-1.11.2-1.3"
+      "newFileName": "ShowArmsStand-1.11.2-1.3.1"
     }
   ]
 }
