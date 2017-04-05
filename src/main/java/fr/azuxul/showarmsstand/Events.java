@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2017. Azuxul, All Rights Reserved.
+ */
+
 package fr.azuxul.showarmsstand;
 
 import net.minecraft.entity.item.EntityArmorStand;
